@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Session data
+session/
+auth_info*/
+
+# Database
+database.json.bak
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.local/
+
+# Puppeteer
+.cache/puppeteer/
