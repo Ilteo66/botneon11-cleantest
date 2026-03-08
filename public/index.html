@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VareBot Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1a1a2e; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #16213e; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; width: 300px; }
+        h1 { color: #e94560; margin-bottom: 1.5rem; }
+        .stat { margin: 1rem 0; font-size: 1.1rem; }
+        .label { color: #95a5a6; display: block; font-size: 0.9rem; }
+        .value { font-weight: bold; color: #00d2ff; }
+        .status-online { color: #2ecc71; }
+        .status-offline { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>VareBot</h1>
+        <div class="stat">
+            <span class="label">Stato</span>
+            <span id="status" class="value status-offline">In caricamento...</span>
+        </div>
+        <div class="stat">
+            <span class="label">Uptime</span>
+            <span id="uptime" class="value">-</span>
+        </div>
+        <div class="stat">
+            <span class="label">Ping</span>
+            <span id="ping" class="value">-</span>
+        </div>
+        <div class="stat">
+            <span class="label">Messaggi Totali</span>
+            <span id="messages" class="value">-</span>
+        </div>
+    </div>
+
+    <script>
+        async function updateStats() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+                document.getElementById('status').innerText = data.status;
+                document.getElementById('status').className = 'value ' + (data.status === 'Connesso' ? 'status-online' : 'status-offline');
+                document.getElementById('uptime').innerText = data.uptime;
+                document.getElementById('ping').innerText = data.ping;
+                document.getElementById('messages').innerText = data.messagesReceived;
+            } catch (e) {
+                console.error('Errore nel caricamento delle statistiche:', e);
+            }
+        }
+        setInterval(updateStats, 5000);
+        updateStats();
+    </script>
+</body>
+</html>
