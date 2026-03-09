@@ -26,11 +26,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       defmenu.after
     ].join('\n')
     await conn.sendMessage(m.chat, {
-      video: { url: './media/menu/menu5.mp4' },
+      image: { url: './media/menu/menu_new.jpg' },
       caption: text.trim(),
-      gifPlayback: true,
-      gifAttribution: 2,
-      mimetype: 'video/mp4',
       ...fake,
       contextInfo: {
         ...fake.contextInfo,
