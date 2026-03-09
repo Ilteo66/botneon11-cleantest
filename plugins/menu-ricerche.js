@@ -156,9 +156,8 @@ let tags = {
 await m.react('🔦') 
 
  conn.sendMessage(m.chat, {
-    video: fs.readFileSync('./media/menu/menu7.mp4'),
+    image: fs.readFileSync('./media/menu/menu_new.jpg'),
     caption: text.trim(),
-    gifPlayback: true,
     ...fake, // Usa il global.fake per il contesto
     contextInfo: {
         ...fake.contextInfo, // Mantieni il contesto del fake
