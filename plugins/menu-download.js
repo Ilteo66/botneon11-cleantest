@@ -144,9 +144,8 @@ let replace = {
 await m.react('⬇️') 
 
  conn.sendMessage(m.chat, {
-    video: fs.readFileSync('./media/menu/menu8.mp4'),
+    image: fs.readFileSync('./media/menu/menu_new.jpg'),
     caption: text.trim(),
-    gifPlayback: true,
     ...fake,
     contextInfo: {
         ...fake.contextInfo,
