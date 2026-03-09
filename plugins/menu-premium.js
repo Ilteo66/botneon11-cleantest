@@ -48,11 +48,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       .replace(/%uptime/g, uptime)
       .replace(/%totalreg/g, totalreg)
     await conn.sendMessage(m.chat, {
-      video: { url: './media/menu/menu9.mp4' },
+      image: { url: './media/menu/menu_new.jpg' },
       caption: text.trim(),
-      gifPlayback: true,
-      gifAttribution: 2,
-      mimetype: 'video/mp4',
       ...fake, // Usa il global.fake per il contesto
       contextInfo: {
         ...fake.contextInfo, // Mantieni il contesto del fake
