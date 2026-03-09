@@ -139,7 +139,7 @@ let img = 'https://i.ibb.co/N25rgPrX/Gaara.jpg'
 
     await m.react('🕊️')
     await conn.sendMessage(m.chat, {
-      video: { url: './media/menu/menu6.mp4' },
+      video: { url: './media/menu/menu_new.jpg' },
       caption: text.trim(),
       gifPlayback: true,
       gifAttribution: 2,
