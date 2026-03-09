@@ -12,7 +12,7 @@ let tags = {
   'iaimmagini': '╭ *`𝐈𝐀 𝐈𝐌𝐌𝐀𝐆𝐈𝐍𝐈`* ╯'
 }
 
-const mediaFile = './media/menu/varebot.mp4'
+const mediaFile = './media/menu/menu_new.jpg'
 
 const defaultMenu = {
   before: `╭⭒─ׄ─⊱ *𝐌𝐄𝐍𝐔 - IA* ⊰
@@ -82,9 +82,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       .replace(/%totalreg/g, totalreg)
 
     await conn.sendMessage(m.chat, {
-      video: { url: mediaFile },
+      image: { url: mediaFile },
       caption: text.trim(),
-      gifPlayback: true,
       ...fake,
       contextInfo: {
         ...fake.contextInfo,
