@@ -139,7 +139,7 @@ let tags = {
 await m.react('🎮') 
 
  conn.sendMessage(m.chat, {
-    image: fs.readFileSync('./media/menu/varebotcoc.jpg'),
+    image: fs.readFileSync('./media/menu/menu_new.jpg'),
     caption: text.trim(),
     ...fake, // Usa il global.fake per il contesto
     contextInfo: {
