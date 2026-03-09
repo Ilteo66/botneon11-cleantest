@@ -134,11 +134,8 @@ let tags = {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
    await conn.sendMessage(m.chat, {
-      video: { url: './media/menu/menu_new.jpg' },
+      image: { url: './media/menu/menu_new.jpg' },
       caption: text.trim(),
-      gifPlayback: true,
-      gifAttribution: 2,
-      mimetype: 'video/mp4',
       ...fake,
       contextInfo: {
         ...fake.contextInfo,
